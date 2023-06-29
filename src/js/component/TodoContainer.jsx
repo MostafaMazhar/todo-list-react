@@ -5,6 +5,10 @@ export default function TodoContainer() {
   const [userInput, setUserInput] = useState("");
   const [todoList, setTodoList] = useState([""]);
 
+  const removeTodo = (key) => {
+    setTodoList(todoList.filter(() => {}));
+  };
+
   const onChangeHandler = (event) => setUserInput(event.target.value);
 
   const addTodoHandler = (event) => {
@@ -24,7 +28,7 @@ export default function TodoContainer() {
         />
       </form>
       {todoList.map((todo, index) => (
-        <Todo key={index} todo={todo} />
+        <Todo key={index} todo={todo} removeTodo={removeTodo} />
       ))}
     </div>
   );
