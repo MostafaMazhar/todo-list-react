@@ -11,7 +11,6 @@ export default function Todo(props) {
     >
       <p>{todo}</p>
       {showDelete && <p onClick={removeTodo}>Delete Icon</p>}
-      {/* {showDelete && <p onClick={() => removeTodo(key)}>Delete Icon</p>} */}
     </div>
   );
 }
