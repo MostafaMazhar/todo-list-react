@@ -1,0 +1,138 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: whitesmoke;
+  color: black;
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center; /* Center the Todos title */
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  margin-top: 1rem; /* Move the todo list down */
+  list-style: none;
+}
+
+.list li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background: #f8f8f8; /* Offwhite background color for each Todo item */
+  padding: 0.5rem 1rem; /* Add some padding around each Todo item */
+  border-bottom: 1px solid #ccc; /* Add a separation line between each item */
+}
+
+.list li:last-child {
+  border-bottom: none; /* Remove the separation line for the last item */
+}
+
+.list li label {
+  display: flex;
+  gap: 0.25rem;
+  cursor: pointer;
+  align-items: center;
+  flex: 1; /* Allow the task title to grow and fill the available space */
+}
+
+.list li label::before {
+  content: "✔"; /* Use the checkmark directly instead of a background */
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: hsl(200, 100%, 40%);
+  color: hsl(200, 100%, 90%);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.list li:has(input:focus-visible) label {
+  outline: 1px solid hsl(200, 2%, 61%);
+}
+
+.list li input {
+  outline: none;
+  width: 0;
+  height: 0;
+  appearance: none;
+  pointer-events: none;
+  position: absolute;
+}
+
+.list li label:hover::before {
+  background: hsl(200, 100%, 30%);
+}
+
+.list li:has(input:checked) label::before {
+  background: hsl(200, 100%, 40%);
+  color: hsl(200, 100%, 90%);
+}
+
+.list li:has(input:checked) label:hover::before {
+  background: hsl(200, 100%, 30%);
+}
+
+.new-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.btn {
+  background: #f8f8f8; /* Gray background color for the button */
+  border: 1px solid #ccc; /* Light gray border for the button */
+  color: black; /* Black text color for the button */
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #eee; /* Slightly lighter gray on hover */
+}
+
+.btn.btn-danger {
+  background: hsl(0, 100%, 40%, 0.1);
+  border: 1px solid hsl(0, 1%, 68%);
+  color: hsl(0, 100%, 40%);
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:focus-visible {
+  background: hsl(0, 100%, 40%, 0.2);
+}
+
+.new-item-form input {
+  outline: none;
+  border: 1px solid black; /* Set the border color to black */
+  background: white; /* White background color for the input */
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  color: hsl(0, 0%, 0%);
+}
+
+.new-item-form input:focus {
+  border: 1px solid hsl(0, 0%, 0%);
+}
+.no-tasks {
+  text-align: center;
+  color: #888;
+}
